@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marwadi Yuva Manch - Paikmal Branch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Lora:wght@700&family=Roboto:wght@400;500&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Reset and General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #FFFFFF; /* White */
+            color: #000000; /* Black */
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+        }
+        section {
+            min-height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header */
+        header {
+            background: #0B1D4A; /* Dark Navy Blue */
+            padding: 15px 20px;
+            color: #FFFFFF; /* White */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header .logo {
+            font-family: 'Merriweather', serif;
+            font-size: 22px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        header .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #C9A74D; /* Golden Yellow */
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+        }
+        nav ul li a {
+            color: #FFFFFF; /* White */
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        nav ul li a:hover {
+            background: #C9A74D; /* Golden Yellow */
+        }
+
+        /* Section Labels */
+        .section-label {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: #0B1D4A; /* Dark Navy Blue */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/MYM banner.jpeg') center/cover no-repeat;
+            text-align: center;
+            width: 100%;
+        }
+        #hero .hero-container {
+            max-width: 800px;
+            width: 100%;
+            padding: 0 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        #hero .content-box {
+            background: rgba(255, 255, 255, 0.95); /* White overlay */
+            padding: 25px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            border: 2px solid #C9A74D; /* Golden Yellow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000; /* Black */
+            margin-bottom: 8px;
+        }
+        #hero h2 {
+            font-family: 'Lora', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #0B1D4A; /* Dark Navy Blue */
+            margin-bottom: 8px;
+        }
+        #hero p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #000000; /* Black */
+            margin-bottom: 10px;
+        }
+        #hero .quick-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+            max-width: 600px;
+            justify-content: center;
+        }
+        #hero .quick-stats .stat {
+            background: #FFFFFF; /* White */
+            padding: 10px;
+            border-radius: 6px;
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        #hero .quick-stats .stat:hover {
+            transform: scale(1.05);
+        }
+        #hero .quick-stats .material-icons {
+            font-size: 20px;
+            color: #C9A74D; /* Golden Yellow */
+            margin-bottom: 5px;
+        }
+        #hero .quick-stats p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #000000; /* Black */
+        }
+        #hero .quotes {
+            width: 100%;
+            max-width: 400px;
+            background: #E8D5A1; /* Lighter Golden Yellow */
+            color: #000000; /* Black */
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif;
+            font-style: italic;
+            font-size: 16px;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 2px solid #C9A74D; /* Golden Yellow */
+            text-align: center;
+        }
+        #hero .image-scroller {
+            width: 100%;
+            max-width: 800px;
+            overflow-x: hidden;
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #hero .image-scroller .scroller-content {
+            display: flex;
+            gap: 10px;
+            animation: autoScroll 20s linear infinite;
+        }
+        #hero .image-scroller img {
+            width: 180px;
+            height: 135px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 2px solid #C9A74D; /* Golden Yellow */
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+        #hero .image-scroller img:hover {
+            transform: scale(1.05);
+        }
+        @keyframes autoScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* Our Community Section */
+        #our-community {
+            background: #B9E2FA; /* Lighter Sky Blue */
+            text-align: center;
+            width: 100%;
+        }
+        #our-community .container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 0 15px;
+        }
+        #our-community h2 {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #000000; /* Black */
+            margin-bottom: 10px;
+        }
+        #our-community .subtitle {
+            font-size: 16px;
+            color: #0B1D4A; /* Dark Navy Blue */
+            margin-bottom: 15px;
+        }
+        #our-community .leadership {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        #our-community .leadership .card {
+            background: #FFFFFF; /* White */
+            padding: 15px;
+            border-radius: 6px;
+            width: 100%;
+            max-width: 280px;
+            text-align: left;
+            border: 2px solid #C9A74D; /* Golden Yellow */
+            transition: box-shadow 0.3s;
+        }
+        #our-community .leadership .card:hover {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        #our-community .leadership .card h4 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #000000; /* Black */
+            margin-bottom: 5px;
+        }
+        #our-community .leadership .card p {
+            font-size: 14px;
+            color: #000000; /* Black */
+        }
+        #our-community .member-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 5px;
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            background: #FFFFFF; /* White */
+            border-radius: 6px;
+            width: 100%;
+            scrollbar-width: thin;
+            scrollbar-color: #C9A74D #B9E2FA; /* Golden Yellow on Sky Blue */
+        }
+        #our-community .member-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        #our-community .member-list::-webkit-scrollbar-thumb {
+            background: #C9A74D; /* Golden Yellow */
+            border-radius: 3px;
+        }
+        #our-community .member-list::-webkit-scrollbar-track {
+            background: #B9E2FA; /* Lighter Sky Blue */
+        }
+        #our-community .member-item {
+            font-size: 14px;
+            color: #000000; /* Black */
+            padding: 8px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        #our-community .member-item:nth-child(odd) {
+            background: #FFFFFF; /* White */
+        }
+        #our-community .member-item:nth-child(even) {
+            background: #B9E2FA; /* Lighter Sky Blue */
+        }
+        #our-community .member-item:hover {
+            background: #E63946; /* Brighter Crimson Red */
+            color: #FFFFFF; /* White */
+        }
+        #our-community .member-item span {
+            display: block;
+            font-size: 12px;
+            color: inherit;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            background: #FFFFFF; /* White */
+            text-align: center;
+            width: 100%;
+        }
+        #gallery .container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 0 15px;
+        }
+        #gallery h2 {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #000000; /* Black */
+            margin-bottom: 10px;
+        }
+        #gallery .intro {
+            font-size: 16px;
+            color: #0B1D4A; /* Dark Navy Blue */
+            max-width: 600px;
+            margin: 0 auto 15px;
+        }
+        #gallery .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+            width: 100%;
+        }
+        #gallery .gallery-item {
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        #gallery .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        #gallery .gallery-item img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            loading: lazy;
+        }
+        #gallery .gallery-item p {
+            font-size: 14px;
+            color: #000000; /* Black */
+            padding: 5px;
+            background: #B9E2FA; /* Lighter Sky Blue */
+        }
+
+        /* Future Plans Section */
+        #future-plans {
+            background: #B9E2FA; /* Lighter Sky Blue */
+            text-align: center;
+            width: 100%;
+        }
+        #future-plans .container {
+            max-width: 1000px;
+            width: 100%;
+            padding: 0 15px;
+        }
+        #future-plans .section-label {
+            color: #0B1D4A; /* Dark Navy Blue */
+        }
+        #future-plans .intro {
+            font-size: 16px;
+            color: #0B1D4A; /* Dark Navy Blue */
+            margin-bottom: 15px;
+        }
+        #future-plans h2.title {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            color: #000000; /* Black */
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        #future-plans .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+            width: 100%;
+        }
+        #future-plans .card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 6px;
+            padding: 10px;
+            background: #FFFFFF; /* White */
+            transition: transform 0.3s;
+        }
+        #future-plans .card:hover {
+            transform: translateY(-5px);
+        }
+        #future-plans .material-icons {
+            font-size: 36px;
+            color: #C9A74D; /* Golden Yellow */
+        }
+        #future-plans .card h4 {
+            margin: 0 0 5px 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #000000; /* Black */
+        }
+        #future-plans .card p {
+            margin: 0;
+            font-size: 14px;
+            color: #000000; /* Black */
+        }
+        #future-plans .card .tagline {
+            font-size: 12px;
+            color: #0B1D4A; /* Dark Navy Blue */
+            font-style: italic;
+            margin-top: 5px;
+        }
+        #future-plans .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #D62828; /* Crimson Red */
+            border-radius: 3px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+        #future-plans .progress-bar .progress {
+            height: 100%;
+            background: #C9A74D; /* Golden Yellow */
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from { width: 0; }
+            to { width: var(--progress); }
+        }
+
+        /* About Section */
+        #about {
+            background: #2A4BA0; /* Lighter Royal Blue */
+            color: #FFFFFF; /* White */
+            text-align: center;
+            width: 100%;
+        }
+        #about .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 0 15px;
+        }
+        #about h2 {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        #about p {
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 15px;
+            color: #B9E2FA; /* Lighter Sky Blue */
+        }
+        #about .contact-info {
+            background: #E8D5A1; /* Lighter Golden Yellow */
+            padding: 15px;
+            border-radius: 6px;
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        #about .contact-info h3 {
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #0B1D4A; /* Dark Navy Blue */
+            margin-bottom: 10px;
+        }
+        #about .contact-info p {
+            font-size: 14px;
+            color: #000000; /* Black */
+            margin-bottom: 5px;
+        }
+        #about .contact-info .past-presidents {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        #about .contact-info .president-tile {
+            background: #FFFFFF; /* White */
+            color: #000000; /* Black */
+            padding: 10px;
+            border-radius: 6px;
+            width: 160px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        #about .contact-info .president-tile:hover {
+            transform: scale(1.05);
+        }
+        #about .contact-info .president-tile h4 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        #about .contact-info .president-tile p {
+            font-size: 14px;
+            color: #000000; /* Black */
+        }
+        #about .contact-info .social-links {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        #about .contact-info .social-links a {
+            color: #D62828; /* Crimson Red */
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        #about .contact-info .social-links a:hover {
+            color: #E63946; /* Brighter Crimson Red */
+        }
+
+        /* Footer */
+        footer {
+            background: #0B1D4A; /* Dark Navy Blue */
+            color: #FFFFFF; /* White */
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            scroll-snap-align: none;
+        }
+        footer img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid #C9A74D; /* Golden Yellow */
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        footer .social-links a {
+            color: #FFFFFF; /* White */
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        footer .social-links a:hover {
+            color: #C9A74D; /* Golden Yellow */
+        }
+
+        /* Navigation Dots */
+        .nav-dots {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 100;
+        }
+        .nav-dots .dot {
+            width: 10px;
+            height: 10px;
+            background: #C9A74D; /* Golden Yellow */
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+        .nav-dots .dot.active {
+            opacity: 1;
+        }
+
+        /* Back-to-Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: #D62828; /* Crimson Red */
+            color: #FFFFFF; /* White */
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        #back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #back-to-top:hover {
+            background: #E63946; /* Brighter Crimson Red */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 15px;
+            }
+            header .logo {
+                font-size: 18px;
+            }
+            header .logo img {
+                width: 32px;
+                height: 32px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            nav ul li a {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+            section {
+                padding: 15px;
+            }
+            #hero .hero-container {
+                gap: 10px;
+            }
+            #hero h1 {
+                font-size: 28px;
+            }
+            #hero h2 {
+                font-size: 18px;
+            }
+            #hero p,
+            #hero .quotes {
+                font-size: 14px;
+            }
+            #hero .content-box {
+                padding: 15px;
+                max-width: 100%;
+            }
+            #hero .quick-stats {
+                flex-direction: column;
+                gap: 8px;
+            }
+            #hero .quick-stats .stat {
+                min-width: 100%;
+            }
+            #hero .image-scroller {
+                max-width: 100%;
+            }
+            #hero .image-scroller img {
+                width: 120px;
+                height: 90px;
+            }
+            #our-community .container,
+            #gallery .container,
+            #future-plans .container,
+            #about .container {
+                padding: 0 10px;
+            }
+            #our-community .leadership .card {
+                max-width: 100%;
+            }
+            #our-community .member-list {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                max-height: 200px;
+            }
+            #gallery .gallery-container {
+                grid-template-columns: 1fr;
+            }
+            #gallery .gallery-item img {
+                height: 140px;
+            }
+            #future-plans .grid {
+                grid-template-columns: 1fr;
+            }
+            #about .contact-info {
+                max-width: 100%;
+                padding: 10px;
+            }
+            #about .contact-info .past-presidents {
+                flex-direction: column;
+                align-items: center;
+            }
+            #about .contact-info .president-tile {
+                width: 100%;
+                max-width: 280px;
+            }
+            footer {
+                padding: 10px;
+                font-size: 12px;
+            }
+            .nav-dots {
+                right: 5px;
+            }
+            #back-to-top {
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+            }
+        }
+        @media (max-width: 480px) {
+            #hero h1 {
+                font-size: 24px;
+            }
+            #hero h2 {
+                font-size: 16px;
+            }
+            #hero p,
+            #hero .quotes {
+                font-size: 12px;
+            }
+            #hero .content-box {
+                padding: 10px;
+            }
+            #hero .image-scroller img {
+                width: 100px;
+                height: 75px;
+            }
+            #our-community h2,
+            #gallery h2,
+            #future-plans h2,
+            #about h2 {
+                font-size: 20px;
+            }
+            #our-community .member-list {
+                grid-template-columns: 1fr;
+            }
+            #about .contact-info h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
+    <script>
+        // Back-to-Top Button
+        const backToTop = document.createElement('div');
+        backToTop.id = 'back-to-top';
+        backToTop.innerHTML = '<span class="material-icons">arrow_upward</span>';
+        document.body.appendChild(backToTop);
+
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 300);
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Dynamic Footer Year
+        document.querySelector('footer p').textContent = `© ${new Date().getFullYear()} Marwadi Yuva Manch - Paikmal Branch. All Rights Reserved.`;
+
+        // Navigation Dots
+        const sections = document.querySelectorAll('section');
+        const navDots = document.createElement('div');
+        navDots.className = 'nav-dots';
+        sections.forEach((section, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.addEventListener('click', () => {
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+            navDots.appendChild(dot);
+        });
+        document.body.appendChild(navDots);
+
+        const updateActiveDot = () => {
+            const scrollPosition = window.scrollY;
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const dots = document.querySelectorAll('.nav-dots .dot');
+                if (scrollPosition >= sectionTop - 50 && scrollPosition < sectionTop + sectionHeight - 50) {
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    dots[index].classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', updateActiveDot);
+        updateActiveDot();
+
+        // Duplicate images for seamless auto-scroll
+        const scrollerContent = document.querySelector('#hero .scroller-content');
+        scrollerContent.innerHTML += scrollerContent.innerHTML; // Duplicate images
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/MYM logo.jpeg" alt="Logo">
+            MYM Paikmal
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#our-community">Our Community</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#future-plans">Future Plans</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="section-label">Welcome</div>
+            <div class="hero-container">
+                <div class="content-box">
+                    <h1>Marwadi Yuva Manch Paikmal</h1>
+                    <h2>Empowering Communities, Inspiring Change</h2>
+                    <p>We are dedicated to fostering unity, service, and progress in Paikmal through youth-driven initiatives.</p>
+                </div>
+                <div class="quick-stats">
+                    <div class="stat">
+                        <span class="material-icons">groups</span>
+                        <p>100+ Volunteers</p>
+                    </div>
+                    <div class="stat">
+                        <span class="material-icons">event</span>
+                        <p>30+ Events</p>
+                    </div>
+                    <div class="stat">
+                        <span class="material-icons">favorite</span>
+                        <p>200+ units of blood donanted</p>
+                    </div>
+                </div>
+                <div class="quotes">
+                    <p>“Together, we create impact.”</p>
+                </div>
+                <div class="image-scroller">
+                    <div class="scroller-content">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="our-community">
+            <div class="container">
+                <div class="section-label">Our Community</div>
+                <h2>Meet Our Community</h2>
+                <p class="subtitle">Together, we make a difference.</p>
+                <div class="leadership">
+                    <div class="card">
+                        <h4>Rohit Agrawal</h4>
+                        <p>President</p>
+                        <p>Leading with vision to uplift Paikmal.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Ayush Agrawal</h4>
+                        <p>Secretary</p>
+                        <p>Organizing impactful community programs.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Aman Jindal</h4>
+                        <p>Treasurer</p>
+                        <p>Managing resources for maximum impact.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Mukesh Mittal</h4>
+                        <p>Vice President</p>
+                        <p>Overseeing activites of MYM Paikmal</p>
+                    </div>
+                </div>
+                <div class="member-list">
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                    <div class="member-item">Rahul Agrawal<span>Volunteer</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <div class="section-label">Our Activities</div>
+                <h2>Gallery of Deeds</h2>
+                <p class="intro">Discover the impact we’ve made through our dedicated efforts in Paikmal.</p>
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <p>Planting for a greener tomorrow.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <p>Providing free healthcare to all.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <p>Empowering women through skills.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <p>Training youth for a bright future.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <p>Bringing our community together.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <p>Supporting education for all.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <p>Helping in times of crisis.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <p>Volunteering for a better tomorrow.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <p>Organizing blood donation camps.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <p>Celebrating local heritage.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <p>Promoting a cleaner Paikmal.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/MYM bd.jpeg" alt="Community Event">
+                        <p>Workshops for skill development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="future-plans">
+            <div class="container">
+                <div class="section-label">Our Vision</div>
+                <h2 class="title">Future Plans</h2>
+                <p class="intro">Our roadmap to creating lasting impact in Paikmal.</p>
+                <div class="grid">
+                    <div class="card">
+                        <span class="material-icons">menu_book</span>
+                        <div>
+                            <h4>Education Support</h4>
+                            <p>Build tuition centers for underprivileged kids.</p>
+                            <p class="tagline">Empowering the Future</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="--progress: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="material-icons">local_hospital</span>
+                        <div>
+                            <h4>Free Medical Camps</h4>
+                            <p>Organize rural health checkup drives.</p>
+                            <p class="tagline">Health for All</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="--progress: 60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="material-icons">diversity_3</span>
+                        <div>
+                            <h4>Women Empowerment</h4>
+                            <p>Skill-building programs for women.</p>
+                            <p class="tagline">Strength in Unity</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="--progress: 45%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="material-icons">forest</span>
+                        <div>
+                            <h4>Tree Plantation</h4>
+                            <p>Promote green campaigns and cleanups.</p>
+                            <p class="tagline">Green Today</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="--progress: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="material-icons">work</span>
+                        <div>
+                            <h4>Youth Skilling</h4>
+                            <p>Train youth in job-ready skills.</p>
+                            <p class="tagline">Building Careers</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="--progress: 55%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="material-icons">volunteer_activism</span>
+                        <div>
+                            <h4>Disaster Relief</h4>
+                            <p>Quick response with food & supplies.</p>
+                            <p class="tagline">Support in Crisis</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="--progress: 40%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="material-icons">library_books</span>
+                        <div>
+                            <h4>Community Library</h4>
+                            <p>Establish a free library for all.</p>
+                            <p class="tagline">Knowledge for All</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="--progress: 35%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="material-icons">water_drop</span>
+                        <div>
+                            <h4>Clean Water Access</h4>
+                            <p>Install water purifiers in villages.</p>
+                            <p class="tagline">Healthy Lives</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="--progress: 65%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="material-icons">sports_soccer</span>
+                        <div>
+                            <h4>Sports Development</h4>
+                            <p>Promote youth sports with camps.</p>
+                            <p class="tagline">Active Mind</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="--progress: 30%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="material-icons">theater_comedy</span>
+                        <div>
+                            <h4>Cultural Events</h4>
+                            <p>Host festivals to preserve heritage.</p>
+                            <p class="tagline">Celebrating Roots</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="--progress: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="material-icons">recycling</span>
+                        <div>
+                            <h4>Waste Management</h4>
+                            <p>Promote recycling and waste reduction.</p>
+                            <p class="tagline">Clean Environment</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="--progress: 25%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="material-icons">lightbulb</span>
+                        <div>
+                            <h4>Entrepreneurship Support</h4>
+                            <p>Fund startups for local youth.</p>
+                            <p class="tagline">Fostering Innovation</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="--progress: 20%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="section-label">Who We Are</div>
+                <h2>About Marwadi Yuva Manch</h2>
+                <p>Marwadi Yuva Manch (MYM) Paikmal is committed to driving social change through youth empowerment, community service, and sustainable development. Our vision is a united, thriving Paikmal where every individual can grow and contribute.</p>
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Email: contact@mympaikmal.org</p>
+                    <p>Phone: +91 123-456-7890</p>
+                    <p>Address: Paikmal, Odisha, India</p>
+                    <!-- <div class="past-presidents">
+                        <div class="president-tile">
+                            <h4>2018</h4>
+                            <p>Ramesh Patel</p>
+                        </div>
+                        <div class="president-tile">
+                            <h4>2019</h4>
+                            <p>Suresh Gupta</p>
+                        </div>
+                        <div class="president-tile">
+                            <h4>2020</h4>
+                            <p>Anita Sharma</p>
+                        </div>
+                        <div class="president-tile">
+                            <h4>2023</h4>
+                            <p>Rajesh Agarwal</p>
+                        </div>
+                    </div> -->
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><span class="material-icons">facebook</span></a>
+                        <a href="#" aria-label="Twitter"><span class="material-icons">share</span></a>
+                        <a href="#" aria-label="Instagram"><span class="material-icons">photo_camera</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="assets/MYM logo.jpeg" alt="Logo">
+        <p>© 2025 Marwadi Yuva Manch - Paikmal Branch. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><span class="material-icons">facebook</span></a>
+            <a href="#" aria-label="Twitter"><span class="material-icons">share</span></a>
+            <a href="#" aria-label="Instagram"><span class="material-icons">photo_camera</span></a>
+        </div>
+    </footer>
+</body>
+</html>
